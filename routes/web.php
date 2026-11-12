@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MedicamentoController;
+
 
 
 //Ruta publica
@@ -20,5 +22,7 @@ Route::middleware('auth')->group(function () {
     })->name('dashboard');
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+    Route::resource('medicamentos', MedicamentoController::class);
 
 });
