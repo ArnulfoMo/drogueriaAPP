@@ -60,7 +60,7 @@
                     </a>
 
                     <a class="nav-link"
-                       href="#">
+                       href="{{ route('medicamentos.index') }}">
                         <div class="sb-nav-link-icon">
                             <i class="bi bi-capsule"></i>
                         </div>
