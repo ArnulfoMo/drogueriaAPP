@@ -13,14 +13,14 @@ class AuthController extends Controller
     public function showLogin()
     {
         if (auth()->check()) {
-             return redirect()->route('index');
+             return redirect()->route('dashboard');
         }
 
         return view('auth.login');
     }
 
     //Procesar el Login
-    public function login()
+    public function login(Request $request)
     {
          $credenciales = $request->validate([
             'email' => ['required', 'email'],
@@ -29,7 +29,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credenciales)) {
             $request->session()->regenerate();
-            return redirect()->intended(route('layout.admin'))
+            return redirect()->intended(route('dashboard'))
                 ->with('success', 'Bienvenido, ' . Auth::user()->name);
         }
 
@@ -42,7 +42,7 @@ class AuthController extends Controller
     public function showRegister()
     {
         if (Auth::check()) {
-            return redirect()->route('layout.admin');
+            return redirect()->route('dashboard');
         }
         return view('auth.register');
     }
@@ -64,7 +64,7 @@ class AuthController extends Controller
 
         Auth::login($user);
 
-        return redirect()->route('layout.admin')
+        return redirect()->route('dashboard')
             ->with('success', 'Bienvenido, ' . $user->name);
     }
 

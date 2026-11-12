@@ -52,7 +52,7 @@
                     </div>
 
                     <a class="nav-link"
-                       href="#">
+                       href="{{ route('dashboard') }}">
                         <div class="sb-nav-link-icon">
                             <i class="bi bi-speedometer2"></i>
                         </div>
