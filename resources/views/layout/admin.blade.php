@@ -68,7 +68,7 @@
                     </a>
 
                     <a class="nav-link"
-                       href="#">
+                       href="{{ route('proveedores.index') }}">
                         <div class="sb-nav-link-icon">
                             <i class="bi bi-truck"></i>
                         </div>
