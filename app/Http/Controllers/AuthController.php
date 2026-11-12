@@ -9,9 +9,9 @@ class AuthController extends Controller
     //Mostrar login
     public function showLogin()
     {
-        if (auth()->check()) {
-            return redirect()->route('index');
-        }
+        // if (auth()->check()) {
+        //     return redirect()->route('index');
+        // }
 
         return view('auth.login');
     }
@@ -36,11 +36,11 @@ class AuthController extends Controller
     }
 
     //Mostrar form de registros
-    public function showForm()
+    public function showRegister()
     {
-        if (Auth::check()) {
-            return redirect()->route('layout.admin');
-        }
+        // if (Auth::check()) {
+        //     return redirect()->route('layout.admin');
+        // }
         return view('auth.register');
     }
 

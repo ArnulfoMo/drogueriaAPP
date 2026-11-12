@@ -1,24 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('index', function() {
-    return view('layout.admin');
-});
-
-Route::get('login', function() {
-    return view('auth.login');
-});
 
 //Ruta publica
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
     Route::post('/login', [AuthController::class, 'login'])->name('login.post');
-    Route::get('/register', [AuthController::class, 'showForm'])->name('register');
+    Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
     Route::post('/register', [AuthController::class, 'register'])->name('register.post');
 });
 
