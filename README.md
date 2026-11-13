@@ -63,10 +63,47 @@ php artisan db:seed
 
 ### 5. Habilitar las imágenes
 
-Ejecutar:
+Para que las fotografías de los medicamentos se visualicen correctamente, es hay que habilitar el almacenamiento publico.
+
+Después de extraer el archivo ZIP y abrir el proyecto en la terminal, ejecutar:
 
 ```bash
 php artisan storage:link
+```
+
+Este comando permite acceder a las imágenes guardadas en `storage/app/public` desde el navegador.
+
+**Nota:** Si aparece el mensaje `The public/storage link already exists` y las imágenes no se muestran, verificar si `public/storage` es una carpeta normal en lugar de un enlace.
+
+En Windows (PowerShell), ejecutar:
+
+```powershell
+Get-Item public\storage | Format-List LinkType,Target
+```
+
+Si `LinkType` aparece vacío
+
+```powershell
+Remove-Item public\storage -Recurse -Force
+```
+
+Luego crear nuevamente el enlace:
+
+```bash
+php artisan storage:link
+```
+
+Finalmente, iniciar el servidor:
+
+```bash
+php artisan serve
+```
+
+Abrir el proyecto en:
+
+http://127.0.0.1:8000
+
+Con esto, las fotografías de los medicamentos deberían visualizarse correctamente.
 ```
 
 ### 6. Iniciar el proyecto
