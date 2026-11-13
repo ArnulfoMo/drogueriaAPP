@@ -1,0 +1,268 @@
+
+:root {
+    --disfarma-primary: #2563eb;
+    --disfarma-dark: #172334;
+    --disfarma-sidebar: #1e293b;
+    --disfarma-background: #f3f6fb;
+    --disfarma-border: #e2e8f0;
+    --disfarma-text: #1e293b;
+}
+
+/* general */
+
+body {
+    background: var(--disfarma-background);
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--disfarma-text);
+}
+
+#layoutSidenav_content {
+    background: var(--disfarma-background);
+}
+
+#layoutSidenav_content main {
+    padding-top: 28px !important;
+    padding-bottom: 32px !important;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 650;
+    color: #172334;
+}
+
+/* barar superior */
+
+.sb-topnav {
+    background: var(--disfarma-dark) !important;
+    box-shadow: 0 2px 12px rgba(15, 23, 42, 0.15);
+}
+
+.sb-topnav .navbar-brand {
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+.sb-topnav .btn-outline-light {
+    border-radius: 7px;
+    padding: 7px 14px;
+    transition: all 0.2s ease;
+}
+
+.sb-topnav .btn-outline-light:hover {
+    background: #ffffff;
+    color: var(--disfarma-dark);
+}
+
+/* menu lateral */
+
+.sb-sidenav-dark {
+    background: var(--disfarma-sidebar);
+}
+
+.sb-sidenav-dark .sb-sidenav-menu-heading {
+    color: #94a3b8;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding-top: 24px;
+    padding-bottom: 12px;
+}
+
+.sb-sidenav-dark .nav-link {
+    margin: 4px 10px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    color: #cbd5e1;
+    font-size: 0.92rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.sb-sidenav-dark .nav-link:hover {
+    background: #334155;
+    color: #ffffff;
+}
+
+.sb-sidenav-dark .nav-link.active {
+    background: var(--disfarma-primary);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.sb-sidenav-dark .nav-link .sb-nav-link-icon {
+    margin-right: 10px;
+    color: #94a3b8;
+}
+
+.sb-sidenav-dark .nav-link:hover .sb-nav-link-icon,
+.sb-sidenav-dark .nav-link.active .sb-nav-link-icon {
+    color: #ffffff;
+}
+
+.sb-sidenav-footer {
+    background: #172334 !important;
+    padding: 18px 14px;
+    color: #e2e8f0;
+    overflow-wrap: anywhere;
+}
+
+.sb-sidenav-footer .small {
+    color: #94a3b8;
+    margin-bottom: 5px;
+}
+
+/* tarjeta y dashboard */
+
+.card {
+    border: 1px solid var(--disfarma-border);
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(15, 23, 42, 0.04);
+    overflow: hidden;
+    transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: 0 5px 18px rgba(15, 23, 42, 0.09);
+}
+
+.card-header {
+    background: #ffffff;
+    border-bottom: 1px solid var(--disfarma-border);
+    padding: 15px 20px;
+    font-weight: 600;
+    color: #334155;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+/* KPI */
+
+.card.border-start {
+    border-left-width: 4px !important;
+}
+
+.card.border-start .h4 {
+    font-size: 1.65rem;
+    font-weight: 750;
+    color: #172334;
+}
+
+.card.border-start .fs-2 {
+    opacity: 0.85;
+}
+
+.text-xs {
+    font-size: 0.75rem;
+    letter-spacing: 0.4px;
+}
+
+/* Tablas */
+
+.table {
+    vertical-align: middle;
+}
+
+.table thead th {
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 13px 15px;
+    border-bottom: 1px solid var(--disfarma-border);
+}
+
+.table tbody td {
+    padding: 13px 15px;
+    color: #334155;
+}
+
+.table tbody tr:hover {
+    background: #f8fafc;
+}
+
+/* Botonoes */
+
+.btn {
+    border-radius: 7px;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background: var(--disfarma-primary);
+    border-color: var(--disfarma-primary);
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+/* Form */
+
+.form-label {
+    font-weight: 600;
+    color: #334155;
+    margin-bottom: 7px;
+}
+
+.form-control,
+.form-select {
+    border-radius: 7px;
+    border-color: #cbd5e1;
+    padding: 9px 12px;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #60a5fa;
+    box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.12);
+}
+
+/* bagdes */
+
+.badge {
+    font-weight: 600;
+    padding: 7px 10px;
+    border-radius: 6px;
+}
+
+/* alertas */
+
+.alert {
+    border-radius: 9px;
+}
+
+/* footer */
+
+#layoutSidenav_content footer {
+    background: #ffffff !important;
+    border-top: 1px solid var(--disfarma-border);
+    padding-top: 18px !important;
+    padding-bottom: 18px !important;
+}
+
+#layoutSidenav_content footer .small {
+    color: #64748b !important;
+}
+
+/* responsivo */
+
+@media (max-width: 768px) {
+    #layoutSidenav_content main {
+        padding-top: 20px !important;
+    }
+
+    .card-body {
+        padding: 16px;
+    }
+
+    .card.border-start .h4 {
+        font-size: 1.35rem;
+    }
+
+    .sb-topnav .navbar-brand {
+        font-size: 1rem;
+    }
+}

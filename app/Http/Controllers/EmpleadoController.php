@@ -35,7 +35,7 @@ class EmpleadoController extends Controller
             'apellido' => 'required|string|max:255',
             'correo' => 'required|email|max:255',
             'cargo' => 'required|in:Regente Farmacéutico,Asistente de Farmacia,Jefe de Bodega,Despachador,Cajero',
-            'salario' => 'required|numeric|gt:0|decimal:0,2|max:9999999.99',
+            'salario' => 'required|numeric|gt:0|decimal:0,2|max:99999999.99',
             'fecha_ingreso' => 'required|date',
             'estado' => 'required|in:Activo,Inactivo'
         ]);
