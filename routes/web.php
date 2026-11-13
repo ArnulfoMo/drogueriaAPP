@@ -5,7 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MedicamentoController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\EmpleadoController;
-
+use App\Http\Controllers\DashboardController;
 
 //Ruta publica
 Route::middleware('guest')->group(function () {
@@ -18,9 +18,7 @@ Route::middleware('guest')->group(function () {
 //Ruta protegida
 Route::middleware('auth')->group(function () {
 
-    Route::get('/', function () {
-        return view('layout.admin');
-    })->name('dashboard');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
