@@ -124,7 +124,7 @@ http://127.0.0.1:8000
 
 - **Nombre:** Admistrador
 - **Correo:** admin@disfarma.hn
-- **Contraseña:** admin123.
+- **Contraseña:** admin123
 
 También es posible registrar nuevos usuarios con correos terminados en `@disfarma.hn`.
 
