@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MedicamentoController;
 use App\Http\Controllers\ProveedorController;
+use App\Http\Controllers\EmpleadoController;
 
 
 //Ruta publica
@@ -26,5 +27,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('medicamentos', MedicamentoController::class);
     Route::resource('proveedores', ProveedorController::class)
         ->parameters(['proveedores' => 'proveedor']);
+    Route::resource('empleados', EmpleadoController::class);
 
 });

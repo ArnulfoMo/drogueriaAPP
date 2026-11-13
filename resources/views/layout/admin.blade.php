@@ -76,7 +76,7 @@
                     </a>
 
                     <a class="nav-link"
-                       href="#">
+                       href="{{ route('empleados.index') }}">
                         <div class="sb-nav-link-icon">
                             <i class="bi bi-people"></i>
                         </div>
