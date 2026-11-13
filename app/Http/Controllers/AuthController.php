@@ -23,18 +23,25 @@ class AuthController extends Controller
     public function login(Request $request)
     {
          $credenciales = $request->validate([
-            'email' => ['required', 'email'],
+            'email' => ['required', 'email', 'ends_with:@disfarma.hn'],
             'password' => ['required'],
         ]);
 
-        if (Auth::attempt($credenciales)) {
+        $remember = $request->boolean('remember');
+
+        if (Auth::attempt([
+            'email' => $credenciales['email'],
+            'password' => $credenciales['password']
+        ], $remember)) {
+
             $request->session()->regenerate();
+
             return redirect()->intended(route('dashboard'))
                 ->with('success', 'Bienvenido, ' . Auth::user()->name);
         }
 
         return back()->withErrors([
-            'email' => 'EL correo o contrasena son incorrectas.',
+            'email' => 'EL correo o contraseña son incorrectas.',
         ])->onlyInput('email');
     }
 
@@ -52,7 +59,7 @@ class AuthController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
+            'email' => 'required|string|email|max:255|unique:users|ends_with:@disfarma.hn',
             'password' => 'required|string|min:8|confirmed',
         ]);
 
@@ -63,6 +70,8 @@ class AuthController extends Controller
         ]);
 
         Auth::login($user);
+
+        $request->session()->regenerate();
 
         return redirect()->route('dashboard')
             ->with('success', 'Bienvenido, ' . $user->name);
